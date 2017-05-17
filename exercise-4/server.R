@@ -23,5 +23,8 @@ shinyServer(function(input, output) {
   }) 
   
   # Create a `scatter` property on your `output` object. That property shoudl be a `renderPlotly` object that returns a scatterplot (`BuildScatter`)
+  output$scatter <- renderPlotly(
+    return(BuildScatter(joined.data, input$search))
+  )
   
 })

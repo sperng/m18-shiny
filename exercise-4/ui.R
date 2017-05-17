@@ -20,22 +20,32 @@ shinyUI(navbarPage('Electoral College',
                                 plotlyOutput('map')
                               )
                             )
-                   ) 
+                   ), 
                    
                    # Create a tabPanel to show your scatter plot
+                   tabPanel('Scatter',
                    
                             # Add a titlePanel to your tab
+                            titlePanel('Population vs. Vote efficieny'),
                    
                             
                             # Create a sidebar layout for this tab (page)
+                            sidebarLayout(
                    
                               
                               # Create a sidebarPanel for your controls
+                              sidebarPanel(
                    
                                 
                                 # Make a textInput widget for searching for a state in your scatter plot
+                                textInput('search', label = 'Find State', value = '')
+                              ),
                    
                               
                               # Create a main panel, in which you should display your plotly Scatter plot
-                              
+                              mainPanel(
+                                plotlyOuput('scatter')
+                              )
+                            )
+                   )
 ))
